@@ -16,6 +16,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+MEDIA_ROOT = BASE_DIR
+MEDIA_URL = '/media/'
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -77,7 +81,7 @@ WSGI_APPLICATION = 'hotel_details_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'your_database_name',
+        'NAME': 'notun_database',
         'USER': 'postgres',
         'PASSWORD': 'p@stgress',
         'HOST': 'localhost',
@@ -121,6 +125,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# This is where you can define additional locations for static files
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Here, BASE_DIR/static is used as an additional static files directory
+]
+
+# Directory where Django will collect static files to serve them
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

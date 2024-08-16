@@ -24,7 +24,7 @@ property_images/
 hotel_details_project/__pycache__
 data_migration_cli/__pycache__
 admin_panel/__pycache__
-admin_panel/migrations
+admin_panel/migrations/
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.

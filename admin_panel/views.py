@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+
+def welcome(request):
+    return HttpResponse("""
+        <h1>Welcome to Home Page</h1>
+        <p>To log in, visit:
+                    <a href="/admin/">http://127.0.0.1:8000/admin/</a></p>
+    """)

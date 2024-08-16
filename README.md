@@ -10,3 +10,6 @@ when you make any changes to the model you have to do database migration to impl
 
 python manage.py makemigrations
 python manage.py migrate
+
+in-order to run the migrator cli command use-
+python manage.py migrate_scrapy_data

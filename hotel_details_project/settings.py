@@ -24,7 +24,9 @@ MEDIA_URL = '/media/'
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gvggd6@c*bh@7c76#5iqrpoz1s=0^*#)0(8&(g-m@zy#-1@ty$'
+SECRET_KEY = (
+    'django-insecure-gvggd6@c*bh@7c76#5iqrpoz1s=0^*#)0(8&(g-m@zy#-1@ty$'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'admin_panel'
+    'admin_panel',
+    'data_migration_cli'
 ]
 
 MIDDLEWARE = [
@@ -95,16 +98,21 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.'
+        'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -128,7 +136,8 @@ STATIC_URL = 'static/'
 
 # This is where you can define additional locations for static files
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Here, BASE_DIR/static is used as an additional static files directory
+    # Here, BASE_DIR/static is used as an additional static files directory
+    BASE_DIR / "static",
 ]
 
 # Directory where Django will collect static files to serve them

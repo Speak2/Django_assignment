@@ -132,7 +132,7 @@ class PropertyImageAdmin(admin.ModelAdmin):
         if obj.image:
             return format_html(
                 '<a href="{}" target="_blank">'
-                '<img src="{}" width="80" height="60" '
+                '<img src="{}" width="180" height="180" '
                 'style="object-fit: cover;" id="preview-{}" />'
                 '</a>',
                 obj.image.url, obj.image.url, obj.id or '__new__'

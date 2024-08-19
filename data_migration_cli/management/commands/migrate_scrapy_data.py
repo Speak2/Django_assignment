@@ -116,8 +116,8 @@ class DataMigrator:
                 file_name = Path(image_path).name
 
                 full_path = os.path.join(
-                    '/home/w3e02/Documents/hello/'
-                    'web_crawler/dynamic_crawling/hotel_images',
+                    '/home/w3e02/last final check/web_crawler/dynamic_crawling/',
+                    # 'user-base-directory/web_crawler/dynamic_crawling/',
                     *path_parts
                 )
 

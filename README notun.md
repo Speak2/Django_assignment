@@ -1,8 +1,3 @@
-
-
-
-
-
 ## Usage example
 Show how and what your project does. Users should figure out how your project solves their problem by looking at the code example. Spice this up with code blocks and potentially more screenshots. These examples should motivate the users to use your project. 
 ```python

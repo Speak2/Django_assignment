@@ -106,9 +106,7 @@ class PropertyImage(models.Model):
         max_length=255, null=True, blank=True, default=None)  # Default to null
     is_featured = models.BooleanField(default=False)  # Default to False
 
-    def __str__(self):
-        return f"Image for {self.property.title}"
-
+    
     def save(self, *args, **kwargs):
         if self.id:  # If the object already exists
             self.updated_at = timezone.now()

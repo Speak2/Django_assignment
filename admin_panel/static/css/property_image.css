@@ -1,0 +1,24 @@
+
+#changelist-form .field-property {
+    max-width: 150px; 
+    white-space: normal; 
+}
+#changelist-form .field-caption {
+    max-width: 150px;
+    white-space: normal; 
+    word-wrap: break-word;  
+}
+
+th.column-image_preview,td.field-image_preview,
+th.column-property,
+th.column-caption,
+th.column-is_featured,td.field-is_featured,
+th.column-created_at,td.field-created_at,
+th.column-updated_at,td.field-updated_at
+{
+    text-align: center;
+}
+#changelist-form table {
+    table-layout: auto;  
+    width: 100%;  
+}

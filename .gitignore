@@ -23,6 +23,7 @@ media
 property_images/
 
 */__pycache__/ 
+config.py
 
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/

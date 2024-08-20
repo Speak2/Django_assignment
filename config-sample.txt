@@ -1,0 +1,18 @@
+DJANGO_DATABASE_CONFIG = {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'database_name',
+    'USER': 'user_name',
+    'PASSWORD': 'password',
+    'HOST': 'localhost',
+    'PORT': 'port_number',
+}
+
+WEB_CRAWLER_BASE_PATH = '/home/w3e02/last final check/web_crawler/dynamic_crawling/'
+
+SCRAPY_DATABASE_CONFIG = {
+    'NAME': 'database_name',
+    'USER': 'user_name',
+    'PASSWORD': 'password',
+    'HOST': 'localhost',
+    'PORT': 'port_number',
+}

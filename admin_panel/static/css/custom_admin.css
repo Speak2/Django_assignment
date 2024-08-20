@@ -1,0 +1,32 @@
+
+
+#changelist-form .field-display_featured_image {
+    width: 150px;
+}
+#changelist-form .field-property_id {
+    width: 50px;
+}
+#changelist-form .field-title {
+    width: 200px;
+}
+
+#changelist-form .field-display_locations {
+    width: 150px;
+}
+#changelist-form .field-display_amenities {
+    width: 150px;
+}
+#changelist-form .field-create_date,
+#changelist-form .field-update_date {
+    width: 120px;
+}
+
+th.column-display_featured_image, td.field-display_featured_image,
+th.column-property_id, td.field-property_id,
+th.column-title,
+th.column-display_locations, td.field-display_locations,
+th.column-display_amenities, td.field-display_amenities,
+th.column-create_date, td.field-create_date,
+th.column-update_date, td.field-update_date {
+    text-align: center;
+}

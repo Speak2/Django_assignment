@@ -1,12 +1,14 @@
 from django.core.management.base import BaseCommand
 from django.db import transaction
-from django.conf import settings
 import psycopg2
 from admin_panel.models import Property, Location, PropertyImage
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 import os
 from pathlib import Path
+from django.contrib.auth import authenticate
+import getpass
+from config import SCRAPY_DATABASE_CONFIG, WEB_CRAWLER_BASE_PATH
 
 
 class Command(BaseCommand):
@@ -17,6 +19,17 @@ class Command(BaseCommand):
                             help='Perform a dry run without making changes')
 
     def handle(self, *args, **options):
+        # Prompt for admin credentials
+        username = input("Enter admin username: ")
+        password = getpass.getpass("Enter admin password: ")
+
+        # Authenticate the user
+        user = authenticate(username=username, password=password)
+        if user is None or not user.is_superuser:
+            self.stdout.write(self.style.ERROR(
+                'Invalid credentials or not an admin user.'))
+            return
+
         dry_run = options['dry_run']
         if dry_run:
             self.stdout.write(self.style.WARNING('Performing dry run...'))
@@ -32,11 +45,11 @@ class DataMigrator:
         self.style = style
         self.dry_run = dry_run
         self.scrapy_conn = psycopg2.connect(
-            dbname='database_name',  # Replace with your actual database name
-            user=settings.DATABASES['default']['USER'],
-            password=settings.DATABASES['default']['PASSWORD'],
-            host=settings.DATABASES['default']['HOST'],
-            port=settings.DATABASES['default']['PORT']
+            dbname=SCRAPY_DATABASE_CONFIG['NAME'],
+            user=SCRAPY_DATABASE_CONFIG['USER'],
+            password=SCRAPY_DATABASE_CONFIG['PASSWORD'],
+            host=SCRAPY_DATABASE_CONFIG['HOST'],
+            port=SCRAPY_DATABASE_CONFIG['PORT']
         )
         self.scrapy_cursor = self.scrapy_conn.cursor()
 
@@ -116,7 +129,7 @@ class DataMigrator:
                 file_name = Path(image_path).name
 
                 full_path = os.path.join(
-                    '/home/w3e02/last final check/web_crawler/dynamic_crawling/',
+                    WEB_CRAWLER_BASE_PATH,
                     # 'user-base-directory/web_crawler/dynamic_crawling/',
                     *path_parts
                 )

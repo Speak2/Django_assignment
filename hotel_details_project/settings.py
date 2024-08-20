@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from config import DJANGO_DATABASE_CONFIG
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,14 +83,7 @@ WSGI_APPLICATION = 'hotel_details_project.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'notun_database',
-        'USER': 'postgres',
-        'PASSWORD': 'p@stgress',
-        'HOST': 'localhost',
-        'PORT': '5433',
-    }
+    'default': DJANGO_DATABASE_CONFIG
 }
 
 

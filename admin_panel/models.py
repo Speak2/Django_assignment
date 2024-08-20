@@ -76,10 +76,10 @@ class Amenity(models.Model):
 
 
 class Property(models.Model):
-    property_id = models.CharField(max_length=50, unique=True)
+    property_id = models.IntegerField()
     title = models.CharField(max_length=200)
-    description = models.TextField()
-    locations = models.ManyToManyField(Location)
+    description = models.TextField(blank=True)
+    locations = models.ManyToManyField(Location, blank=True)
     amenities = models.ManyToManyField(Amenity, blank=True)
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(null=True, blank=True)

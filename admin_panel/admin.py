@@ -31,8 +31,8 @@ class LocationAdmin(admin.ModelAdmin):
                     'create_date', 'update_date')
     list_display_links = ('name',)
     readonly_fields = ('create_date', 'update_date')
-    list_filter = ('type',)
-    search_fields = ('name',)
+    list_filter = ('type', 'create_date', 'update_date')
+    search_fields = ('name', 'type')
     fieldsets = (
         ('Location Details', {
             'fields': ('name', 'type', 'latitude', 'longitude',)
@@ -49,6 +49,7 @@ class AmenityAdmin(admin.ModelAdmin):
     list_display = ('name', 'create_date', 'update_date')
     readonly_fields = ('create_date', 'update_date')
     search_fields = ('name',)
+    list_filter = ('create_date', 'update_date')
 
     fieldsets = (
         ('Amenity name', {
@@ -63,11 +64,16 @@ class AmenityAdmin(admin.ModelAdmin):
 
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
+    class Media:
+        css = {
+            'all': ('css/custom_admin.css',)
+        }
     list_display = ('display_featured_image', 'property_id', 'title',
                     'display_locations', 'display_amenities',
                     'create_date', 'update_date')
     list_display_links = ('title',)
-    list_filter = ('locations', 'amenities')
+    ordering = ('property_id',)
+    list_filter = ('locations', 'amenities', 'create_date', 'update_date')
     search_fields = ('property_id', 'title', 'description')
     filter_horizontal = ('locations', 'amenities')
     readonly_fields = ('create_date', 'update_date')
@@ -99,7 +105,7 @@ class PropertyAdmin(admin.ModelAdmin):
         featured_image = obj.images.filter(is_featured=True).first()
         if featured_image:
             return format_html(
-                '<img src="{}" width="80" height="60" '
+                '<img src="{}" width="100" height="80" '
                 'style="object-fit: cover;" />',
                 featured_image.image.url
             )
@@ -110,11 +116,17 @@ class PropertyAdmin(admin.ModelAdmin):
 
 @admin.register(PropertyImage)
 class PropertyImageAdmin(admin.ModelAdmin):
+    class Media:
+        js = ('js/admin/property_image_preview.js',)
+        css = {
+            'all': ('css/property_image.css',)
+        }
     list_display = ('image_preview', 'property', 'caption',
                     'is_featured', 'created_at', 'updated_at')
     readonly_fields = ('created_at', 'updated_at', 'image_preview')
-    list_filter = ('property__title', 'is_featured')
-    # ordering = ('property',)  orders the images as the properties are
+    list_filter = ('property__title', 'is_featured',
+                   'created_at', 'updated_at')
+    ordering = ('property',)
     search_fields = ('property__title', 'property__property_id')
     list_display_links = ('property',)
     fieldsets = (
@@ -145,6 +157,3 @@ class PropertyImageAdmin(admin.ModelAdmin):
         )
 
     image_preview.short_description = 'Image Preview'
-
-    class Media:
-        js = ('js/admin/property_image_preview.js',)

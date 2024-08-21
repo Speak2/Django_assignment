@@ -141,15 +141,13 @@ For example:
    python manage.py migrate_scrapy_data
    ```
 
-
-
 4. Start the development server:
-   ```
+   ```bash
    python manage.py runserver
    ```
 
 5. Access the application at `http://127.0.0.1:8000/`
-6. Acess the admin panel at `http://127.0.0.1:8000/admin`
+6. Access the admin panel at `http://127.0.0.1:8000/admin`
 
 ## Database Creation guide 
 
@@ -159,7 +157,7 @@ In order to create the database use the following sql-
 CREATE DATABASE database_name;
 ```
 
-the location table schema-
+The schema for the `Location` table-
 ```sql
 CREATE TABLE Location (
     id SERIAL PRIMARY KEY,
@@ -172,7 +170,7 @@ CREATE TABLE Location (
 );
 ```
 
-the Amenity table schema-
+The schema for the `Amenity` table-
 ```sql
 CREATE TABLE Amenity (
     id SERIAL PRIMARY KEY,
@@ -182,7 +180,7 @@ CREATE TABLE Amenity (
 );
 ```
 
-the location table schema along with manay to many relation table schema with locations table and amenities table-
+The schema for the `Property` table, along with the schema for the many-to-many relationship tables between the `Locations` table and the `Property` table, as well as the `Amenities` table and the `Property` table-
 ```sql
 CREATE TABLE Property (
     id SERIAL PRIMARY KEY,
@@ -206,7 +204,7 @@ CREATE TABLE Property_amenities (
 );
 ```
 
-the PropertyImage table schema-
+The schema for the `PropertyImage` table-
 ```sql
 CREATE TABLE PropertyImage (
     id SERIAL PRIMARY KEY,

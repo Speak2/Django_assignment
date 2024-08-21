@@ -10,19 +10,61 @@
 
 
 ## Table of Contents
-1. [Requirements](#requirements)
-2. [Installation](#installation)
-3. [Configuration](#configuration)
-4. [Running the Project](#running-the-project)
-5. [Database Creation guide ](#database-creation-guide )
-6. [Admin Panel](#admin-panel)
-7. [Data Migration](#data-migration)
-8. [Key Features](#hotel-details-project---key-features)
-9. [Project Structure](#project-structure) 
+1. [Project Structure](#project-structure) 
+2. [Requirements](#requirements)
+3. [Installation](#installation)
+4. [Configuration](#configuration)
+5. [Running the Project](#running-the-project)
+6. [Database Creation guide ](#database-creation-guide )
+7. [Admin Panel](#admin-panel)
+8. [Data Migration](#data-migration)
+9. [Key Features](#hotel-details-project---key-features)
 10. [Technologies Used](#technologies-used)
-10. [Development Tools](#development-tools)
-11. [Author](#authors)
-12. [License](#license)
+11. [Development Tools](#development-tools)
+12. [Author](#authors)
+13. [License](#license)
+
+## Project Structure
+
+- `admin_panel/`: Main application for the admin interface
+- `data_migration_cli/`: Custom management command for data migration
+- `hotel_details_project/`: Project settings and configuration
+- `static/`: Static files (CSS, JavaScript)
+- `property_images/`: Uploaded property images
+
+   ```bash
+   Django_assignment/
+   │
+   ├── admin_panel/   
+   │   ├── migrations/
+   │   ├── static/
+   │   ├── __init__.py                   
+   │   ├── admin.py 
+   │   ├── apps.py
+   │   ├── models.py
+   │   └── views.py
+   ├── data_migration_cli/                    
+   │   └── management          
+   │      └── commands    
+   │          └── migrate_scrapy_data.py 
+   ├── hotel_details_project/          
+   │   ├── settings.py 
+   │   ├── urls.py
+   │   └── wsgi.py 
+   ├── static/
+   │   └── js/
+   │       └── admin    
+   │           ├── image_preview.js
+   │           └── property_image_preview.js
+   ├── readme_img/
+   ├── property_img/ # this folder will be automatically generated & will contain uploaded images  
+   ├── manage.py
+   ├── config.py  # config.py file should be created here
+   ├── config-sample.txt           
+   ├── README.md   
+   ├── requirements.txt      
+   └── LICIENSE            
+   ```
 
 ## Requirements 
 Tools and packages required to successfully install this project.
@@ -279,48 +321,6 @@ This is the register information of the property details followed by upload imag
 - **Time Zone Support**
   - Configured for Asia/Dhaka (customizable)
 
-
-
-## Project Structure
-
-- `admin_panel/`: Main application for the admin interface
-- `data_migration_cli/`: Custom management command for data migration
-- `hotel_details_project/`: Project settings and configuration
-- `static/`: Static files (CSS, JavaScript)
-- `property_images/`: Uploaded property images
-
-   ```bash
-   Django_assignment/
-   │
-   ├── admin_panel/   
-   │   ├── migrations/
-   │   ├── static/
-   │   ├── __init__.py                   
-   │   ├── admin.py 
-   │   ├── apps.py
-   │   ├── models.py
-   │   └── views.py
-   ├── data_migration_cli/                    
-   │   └── management          
-   │      └── commands    
-   │          └── migrate_scrapy_data.py 
-   ├── hotel_details_project/          
-   │   ├── settings.py 
-   │   ├── urls.py
-   │   └── wsgi.py 
-   ├── static/
-   │   └── js/
-   │       └── admin    
-   │           ├── image_preview.js
-   │           └── property_image_preview.js
-   ├── readme_img/
-   ├── manage.py
-   ├── config.py
-   ├── config-sample.py           
-   ├── README.md   
-   ├── requirements.txt      
-   └── LICIENSE            
-   ```
 
 ## Technologies used
 

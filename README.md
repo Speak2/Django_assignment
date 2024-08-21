@@ -91,19 +91,19 @@ For example:
    ```bash
    pip install -r requirements.txt
    ```
-4. before running this project run the updated **`scrapy_project`**
+4. Before running this project, run the updated **`scrapy_project`**
 
-   github repository -  https://github.com/Speak2/web_crawler
+   GitHub repository: https://github.com/Speak2/web_crawler
 
-   **Please Note:**
-
-    **Due to recent changes in images file names in the scrapy project, running the Django project with the previous Scrapy project database will result in errors.Because it is functional with the updated scrapy project. To ensure proper functionality, please either:**
-
-   - **Drop the Existing Scrapy Database & run the Scrapy project:**
-    If you have run the project before kindly drop the existing database before proceeding.
-
-   - **Use a Different Database Name & run the scrapy project:** Alternatively, you can use a new database name to avoid any conflicts with the previous database and run the scrapy project.
-
+   > **⚠️ IMPORTANT NOTE ⚠️**
+   > 
+   > Due to recent changes in image file names in the scrapy project, running the Django project with the previous Scrapy project database will result in errors. The project is now functional with the updated scrapy project only. Download and run the updated scrapy project from the link given above. To ensure proper functionality, please either:
+   > 
+   > - **Drop the Existing Scrapy Database & run the Scrapy project:**
+   >   If you have run the project before, kindly drop the existing database before proceeding.
+   > 
+   > - **Use a Different Database Name & run the scrapy project:**
+   >   Alternatively, you can use a new database name to avoid any conflicts with the previous database and run the scrapy project.
 
 ## Configuration
 
